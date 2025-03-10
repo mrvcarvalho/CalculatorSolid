@@ -16,6 +16,12 @@ namespace Calculator.UserScreen
         {
             output.WriteLine("\n----------\nCalcolatrice (Ctrl+C per uscire)\n");
 
+            if (String.IsNullOrEmpty(_calcolatrice.GetMenuOperazioni()))
+            {
+                output.WriteLine("Errore: Nessuna operazione disponibile.");
+                return false;
+            }
+
             // Valida il primo numero
             output.Write("Inserisci il primo numero: ");
             string? input1 = input.ReadLine();

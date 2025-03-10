@@ -43,7 +43,13 @@ namespace CalculatorSOLID.Calculator
             // Ciclo principale; termina il programma se exitRequested è vero
             while (!exitRequested)
             {
-                calcRunner.RunIteration(Console.In, Console.Out);
+
+                // Empty Calculator, no operations available
+                bool exitStatus = calcRunner.RunIteration(Console.In, Console.Out);
+                if (!exitStatus)
+                {
+                    exitRequested = true;
+                }
             }
         }
 
